@@ -20,13 +20,10 @@ SERVICIOSORACLE=$(cat /etc/oratab | grep -v "#" | sed '/^\s*$/d' | cut -d: -f1)
 
 for SERVICIO in $SERVICIOSORACLE
 do
-
-echo "------------------------Starting service $SERVICIO------------------------------"
-
-ORACLE_SID=$SERVICIO
-export ORACLE_SID
-sqlplus $USER/$PASSWORD as sysdba <<< startup
-
+    echo "------------------------Starting service $SERVICIO------------------------------"
+    ORACLE_SID=$SERVICIO
+    export ORACLE_SID
+    sqlplus $USER/$PASSWORD as sysdba <<< startup
 done
 
 echo "done"
