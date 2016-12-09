@@ -18,4 +18,4 @@ do
     export ORACLE_SID
     sqlplus $USER/$PASSWORD as sysdba <<< startup
 done
-echo "done"
+echo "Oracle DB Up and running~"
